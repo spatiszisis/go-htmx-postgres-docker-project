@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: gojwt_db
+      POSTGRES_USER: gojwt_user
+      POSTGRES_PASSWORD: gojwt_password
+    ports:
+      - "5433:5432"
