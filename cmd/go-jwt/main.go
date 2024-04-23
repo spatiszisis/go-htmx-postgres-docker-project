@@ -26,6 +26,7 @@ func main() {
 
 	router := gin.Default()
 	jsonContentTypeMiddleware(router)
+	router.Static("/public", "./public/")
 
 	//Start APIS -------
 
@@ -54,7 +55,11 @@ func main() {
 
 	//End APIS -------
 
-	if err := router.Run(":9000"); err != nil {
+	// Views
+	handler := handlers.New(&taskRepo)
+	router.GET("/", handler.HandleHome)
+
+	if err := router.Run(":9002"); err != nil {
 		fmt.Println("Error starting server:", err)
 	}
 
