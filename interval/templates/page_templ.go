@@ -28,7 +28,7 @@ func Page(nav bool) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		if nav {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<nav class=\"flex w-full bg-gray-800 text-blue-300 text-xl p-4\"><a href=\"/\" class=\"ml-6\">Home</a> <a href=\"/cars\" class=\"ml-6\">Cars</a></nav>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<nav class=\"flex w-full bg-gray-800 text-white text-xl p-4\"><a href=\"/\" class=\"ml-6\">Home</a> <a href=\"/cars\" class=\"ml-6\">Cars</a></nav>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

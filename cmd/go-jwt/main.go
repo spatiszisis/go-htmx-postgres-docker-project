@@ -59,7 +59,7 @@ func main() {
 	handler := handlers.New(&taskRepo)
 	router.GET("/", handler.HandleHome)
 
-	if err := router.Run(":9002"); err != nil {
+	if err := router.Run(":9000"); err != nil {
 		fmt.Println("Error starting server:", err)
 	}
 
