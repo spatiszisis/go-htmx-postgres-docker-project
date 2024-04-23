@@ -1,9 +1,13 @@
 run:
-	ps -ef | grep 'go-jwt' | grep -v grep | awk '{print $2}' | xargs -r kill -9 
 	make build
 	@./go-jwt
 
+dev:
+	make build
+	air
+
 build:
+	ps -ef | grep 'go-jwt' | grep -v grep | awk '{print $2}' | xargs -r kill -9 
 	make tailwind-build
 	@templ generate view
 	goose -dir migrations postgres "host=localhost port=5433 user=gojwt_user password=gojwt_password dbname=gojwt_db sslmode=disable" up
